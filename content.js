@@ -15,8 +15,17 @@ iframe.style.borderWidth = '0px';
 iframe.style.borderStyle = "solid"
 iframe.style.bottom = "0";
 iframe.style.left = "0";
-iframe.style.width = "150px";
+iframe.style.width = "auto";
 iframe.style.height = "200px";
+
+
+window.addEventListener("message", function(event) {
+    // Handle the message here
+    console.log(event.data)
+    navigator.clipboard.writeText(event.data.copyFromCGPT)
+    // console.log("Received message from iframe:", event.data);
+  
+});
 
 function handleKeyboardShortcut(event) {
     // Check if Ctrl key and H key are pressed simultaneously
